@@ -1,0 +1,270 @@
+@font-face {
+    font-family: Metal;
+    src: url('metal_lord-webfont.woff2') format('woff2'),
+	url('metal_lord-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Chick;
+    src: url('chick___-webfont.woff2') format('woff2'),
+	url('chick___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pistoleer;
+    src: url('pistoleer-webfont.woff2') format('woff2'),
+	url('pistoleer-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Montserrat;
+	color: black;
+	background: #F8F8FF;
+}
+
+a:link {
+    text-decoration: none;
+	color: #343641;
+	
+}
+a:visited {
+    text-decoration: none;
+	color: #343641;
+	
+}
+a:hover {
+    text-decoration: none;
+	color: darkred;
+	
+}
+a:active {
+    text-decoration: none;
+	color: darkred;
+    
+}
+
+.header {
+	font-family: Pistoleer;
+	font-size: 60px;
+	text-shadow: -2px 3px #6abfa5;
+	width: 50%;
+	margin: 20px auto 0px;
+	color: #343641;
+	background: #f7b0ad;
+	text-align: center;
+	border: 1px solid #009933;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+
+h1{
+	
+	text-decoration: none;
+}
+
+
+.form {
+	width: 50%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #009933;
+	border-bottom: none;
+	background: #F8F8FF;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.content {
+	width: 50%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #009933;
+	background: #F8F8FF;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.center {
+	text-align: center;
+	padding-left: 20px;
+}
+
+.input-group {
+	margin: 10px 0px 0px 0px;
+}
+
+.input-group label {
+	display: block;
+	color: black;
+	text-align: left;
+	margin: 3px;
+}
+
+.input-group input {
+	height: 20px;
+	width: 50%;
+	background: #E7F9E5;
+	padding: 10px 10px 10px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	border: 1px solid #009933;
+}
+
+.input-group radio {
+	
+}
+
+.input-group textarea {
+	height: 60px;
+	width: 80%;
+	padding: 10px 10px 10px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #009933;
+    margin-bottom: 1em;
+}
+
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #009933;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.footer {
+	font-family: Chick, sans-serif;
+	font-size: 40px;
+	text-shadow: -2px 2px #6abfa5;
+	width: 50%;
+	margin: 0px auto 20px;
+	color: #343641;
+	background: #f7b0ad;
+	text-align: center;
+	border-top: 0px;
+	border-bottom: 1px solid #009933;
+	border-left: 1px solid #009932;
+	border-right: 1px solid #009933;
+	
+	border-bottom: none;
+	border-radius: 0px 0px 10px 10px;
+	padding: 20px;	
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #009933;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+.shout-group {    
+    text-align: left;
+    text-decoration: none;
+    color: black;   
+}
+
+.shout-group label {    
+    text-decoration: none;
+    font-size: 95%; 
+    
+}
+
+p {
+    text-align: left;
+    text-decoration: none;
+    color: dimgray;
+    font-size: 90%;
+    margin-top: 4px;
+}
+
+span {   
+    text-decoration: none;
+    color: darkslategray;
+    font-size: 95%;
+    border-bottom: 1px solid #ccc;  
+}
+
+.error {
+	width: 70%;
+	background: #E7F9E5;
+	margin: 0px auto;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid red;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.erms {   
+    text-decoration: none;
+    color: darkred;
+    font-size: 95%;  
+}
+
+.logout {   
+	width: 60%;
+	margin: 0px auto;
+    text-decoration: none;
+	text-align: center;
+    color: darkslategray;
+    font-size: 95%;
+    border-radius: 5px 5px 5px 5px;
+	border: 1px solid #009933;
+	padding: 10px;
+	background: #E7F9E5;	
+}
+
+/* Media Query */
+@media screen and (max-width: 767px){
+	
+	body, .header, .form, .content, .footer, h1, .input-group, .input-group input{
+		margin: 0 auto;
+		padding: 0;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.input-group input {
+		height: 20px;
+		width: 50%;
+		background: #E7F9E5;
+		padding: 10px;
+		font-size: 15px;
+		border-radius: 5px;
+		border: 1px solid #009933;
+	}
+	.content {
+	padding-top: 15px;
+
+		
+		
+	}
+	
+	.header{
+		font-size: 2rem;
+		text-decoration: none;
+		padding-top: 15px;
+	}
+	
+	.footer{
+
+		font-size: 1.5rem;
+		text-decoration: none;
+		padding-top: 15px;
+	}
+	
+}
