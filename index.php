@@ -3,18 +3,12 @@
 	//Dictionary Script by Monir
 	//Saidul Mursalin
 	//Facebook.com/itzmonir
+        //Facebook.com/C5LabProjects
 	
-	//Lets Start The Session
-	session_start();
+	//Include DB Info
+	include 'config.php';
 	
-	//DB Info
-	$host = 'localhost';
-	$user = 'sfmu';
-	$pass = 'sfmu321';
-	$db   = 'sfmu';
-	$site = 'http://localhost/d/';
-	
-	//Functions
+	//PreviousWord Function
 	function pword($wid) {
 		
 		include 'config.php';
@@ -36,10 +30,6 @@
 		$nword = $row["word"];
 		echo ' <a href="http://localhost/d/'.$nword.'.html"><font color="red">'.$nword.'</font></a> &raquo;';	
 	}
-	
-	//DB Connection
-	$connect = mysqli_connect($host, $user, $pass) or die('Database Connection Error!');
-	mysqli_select_db($connect, $db) or die('Database Selection Error!');
 	
 	//Taking value From The Form
 	if(isset($_POST['search'])){
@@ -105,7 +95,7 @@
 		</head>
 		<body>
 			<div class="header">
-				<a href="http://localhost/dictionary">$C5Lab Dictionary;</a>						
+				<a href="#">$C5Lab Dictionary;</a>						
 			</div>
 			
 			<div class="content">
@@ -120,7 +110,7 @@
 					<hr>
 				<?php	}	?>
 				
-				<form action="http://localhost/d/index.php" class="center" method="post">
+				<form action="index.php" class="center" method="post">
 					<div class="input-group">
 						<label>Enter a Word:<label>
 							<input type="text" name="sword" placeholder="Type a Word" required />
@@ -236,7 +226,7 @@
 						</head>
 						<body>
 							<div class="header">
-								<a href="http://localhost/dictionary">$C5Lab Dictionary;</a>						
+								<a href="#">$C5Lab Dictionary;</a>						
 							</div>
 							<div class="content">
 								
@@ -259,7 +249,7 @@
 										echo '</div>';
 									}
 								?>
-								<form action="http://localhost/d/index.php" class="center" method="post">
+								<form action="index.php" class="center" method="post">
 									<div class="input-group">
 										<label>Enter a Word:<label>
 											<input type="text" name="sword" placeholder=" Type a Word" required />
