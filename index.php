@@ -5,19 +5,16 @@
 	//Facebook.com/itzmonir
 	
 	//Lets Start The Session
+	error_reporting(0);
 	session_start();
 	
 	//DB Info
 	include 'config.php';
 	
-	//Site Link
-	$site = 'http://localhost/d';
-	
 	//Functions
 	function pword($wid) {
 		
 		include 'config.php';
-		$site = 'http://localhost/d';
 		
 		$sql = "SELECT * FROM words WHERE id='$wid'";
 		$result = mysqli_query($connect, $sql);	
@@ -29,7 +26,6 @@
 	function nword($wid) {	
 		
 		include 'config.php';
-		$site = 'http://localhost/d';
 		
 		$sql = "SELECT * FROM words WHERE id='$wid'";
 		$result = mysqli_query($connect, $sql);	
@@ -94,28 +90,36 @@
 	?>
 	
 	<!Doctype html>
-	<html>
+	<html lang="en-US">
 		<head>
-			<title><?php echo $sword; ?> - C5Lab Dictionary</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Bengali meaning of <?php echo strtoupper($sword); ?></title>
+			<meta name="google-site-verification" content="c78FVbJAtjIigj33GIHYsiK3Qza2aAFN3swVTlqyKLc" />
+			<meta name="description" content="Bengali meaning of <?php echo $sword; ?> is: <?php echo $bengali; ?>" />			
+			<meta name="keywords" content="<?php echo $sword; ?>,<?php echo $bengali; ?> "/>
+			
+			<link rel="canonical" href="<?php echo $site; ?>/<?php echo $sword; ?>.html" />
+			
+			<meta name="og:title" property="og:title" content="Bengali meaning of <?php echo $sword; ?>" />
+			<meta property="og:url" content="<?php echo $site; ?>/<?php echo $sword; ?>.html"/>
+			<meta property="og:locale" content="en_US" />
+			<meta property="og:type" content="website" />
+			<meta property="og:description" content="Bengali meaning of <?php echo $sword; ?> is: <?php echo $bengali; ?>" />
+			<meta property="og:site_name" content="FourPC Dictionary" />
+			<meta property="article:tag" content="<?php echo $sword; ?>" />
+			<meta property="article:tag" content="<?php echo $bengali; ?>" />
+			
 			<link rel="stylesheet" href="<?php echo $site; ?>/css/style.css"/>
 			<link rel="shortcut icon" href="<?php echo $site; ?>/favicon.png" />
 		</head>
 		<body>
 			<div class="header">
-				<a href="<?php echo $site; ?>">$C5Lab Dictionary;</a>						
+				<a href="<?php echo $site; ?>">FourPC Dictionary;</a>						
 			</div>
 			
 			<div class="content">
-				<?php
-					
-					if (isset($_SESSION['uname'])) {
-						$name = $_SESSION['uname'];
-					?>
-					<nav class="logout">	
-						<a href="../wap/index.php">Home</a> | <a href="../wap/shout.php">Shoutbox</a> | <a href="../wap/user.php?username=<?php echo $name ?>">Profile</a> | <a href="../wap/forum.php">Forum</a> | <a href="../wap/services.php"><mark>Services</mark></a> | <a href="../wap/shout.php?logout">Log Out</a>
-					</nav>
-					<hr>
-				<?php	}	?>
+				<h1><?php echo strtoupper($sword); ?></h1>
+				
 				
 				<form action="<?php echo $site; ?>/index.php" class="center" method="post">
 					<div class="input-group">
@@ -203,13 +207,13 @@
 							}
 							
 							else{
-								echo '<div class="center">Word - <font color="green">"<b>'.$sword.'</b>"</font> not found in our database...</div>';
+								echo '<div class="center">Ops!! Word - <font color="green">"<b>'.$sword.'</b>"</font> not found in our database...</div>';
 							}
 							
 						?>
 					</div>
 					<div class="footer">
-						<a href="http://facebook.com/C5LabProjects" target="_blank">&copy; C5Lab Projects 2019</a>
+						<a href="https://facebook.com/C5LabProjects" target="_blank">&copy; C5Lab Projects 2019</a>
 					</div>
 				</body>
 			</html>
@@ -225,28 +229,34 @@
 			?>
 			
 			<!Doctype html>
-			<html>
+			<html lang="en-US">
 				<head>
-					<title>C5Lab Dictionary</title>
-					<link rel="stylesheet" href="<?php echo $site; ?>/css/style.css"/>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					
+					<title>English to Bengali Dictionary</title>
+					<meta name="google-site-verification" content="c78FVbJAtjIigj33GIHYsiK3Qza2aAFN3swVTlqyKLc" />
+					<meta name="description" content="English to Bengali Online Dictionary" />			
+					<meta name="keywords" content="dictionary" />
+					
+					<link rel="canonical" href="<?php echo $site; ?>" />
+					
+					<meta name="og:title" property="og:title" content="English to Bengali Online Dictionary" />
+					<meta property="og:url" content="<?php echo $site; ?>"/>
+					<meta property="og:locale" content="en_US" />
+					<meta property="og:type" content="website" />
+					<meta property="og:description" content="English to Bengali Online Dictionary" />
+					<meta property="og:site_name" content="FourPC Dictionary" />
+					<meta property="article:tag" content="dictionary" />
+					
+					<link rel="stylesheet" href="<?php echo $site; ?>/css/style.css" />
 					<link rel="shortcut icon" href="<?php echo $site; ?>/favicon.png" />
 				</head>
 				<body>
 					<div class="header">
-						<a href="http://localhost/dictionary">$C5Lab Dictionary;</a>						
+						<a href="<?php echo $site; ?>">FourPC Dictionary;</a>						
 					</div>
 					<div class="content">
 						
-						<?php
-							
-							if (isset($_SESSION['uname'])) {
-								$name = $_SESSION['uname'];
-							?>
-							<nav class="logout">	
-								<a href="../wap/index.php">Home</a> | <a href="../wap/shout.php">Shoutbox</a> | <a href="../wap/user.php?username=<?php echo $name ?>">Profile</a> | <a href="../wap/forum.php">Forum</a> | <a href="../wap/services.php"><mark>Services</mark></a> | <a href="../wap/shout.php?logout">Log Out</a>
-							</nav>
-							<hr>
-						<?php	}	?>
 						
 						<?php 
 							if(!empty($text)) 
@@ -256,21 +266,21 @@
 								echo '</div>';
 							}
 						?>
-						<form action="<?php echo $site; ?>/index.php" class="center" method="post">
-							<div class="input-group">
-								<label>Enter a Word:<label>
-									<input type="text" name="sword" placeholder=" Type a Word" required />
-									
-									<button type="submit" class="btn" name="search" value="Search">Search</button>
-								</div>
-								</form>
+						<form action="<?php echo $site; ?>/index.php" class="center" method="post" />
+						<div class="input-group">
+							<label>Enter a Word:<label>
+								<input type="text" name="sword" placeholder=" Type a Word" required />
 								
+								<button type="submit" class="btn" name="search" value="Search">Search</button>
 							</div>
-							<div class="footer">
-								<a href="http://facebook.com/C5LabProjects" title="C5Lab Projects" target="_blank">&copy; C5Lab Projects 2019</a>
-							</div>
-						</body>
-					</html>
-					
-					<?php }
-				?>																																																																																																																																																					
+							</form>
+							
+						</div>
+						<div class="footer">
+							<a href="https://facebook.com/C5LabProjects" title="C5Lab Projects" target="_blank">&copy; C5Lab Projects 2019</a>
+						</div>
+					</body>
+				</html>
+				
+				<?php }
+			?>																																																																																																																																																																										
